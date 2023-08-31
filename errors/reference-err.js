@@ -1,4 +1,4 @@
-const { REFERENCE_ERROR } = require('./errorsCodes');
+const { REFERENCE_ERROR } = require("./errorsCodes");
 
 class ReferenceError extends Error {
   constructor(message) {

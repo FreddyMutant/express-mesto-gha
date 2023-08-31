@@ -1,4 +1,4 @@
-const { FORBIDDEN_ERROR } = require('./errorsCodes');
+const { FORBIDDEN_ERROR } = require("./errorsCodes");
 
 class ForbiddenError extends Error {
   constructor(message) {
