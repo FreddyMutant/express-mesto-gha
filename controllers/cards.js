@@ -15,7 +15,7 @@ module.exports.createCard = (req, res, next) => {
   const { name, link } = req.body;
 
   Card.create({ name, link, owner: req.user._id })
-    .then((card) => res.send({ data: card }))
+    .then((card) => res.status(STATUS_OK).send(card))
     .catch((err) => {
       if (err instanceof mongoose.Error.ValidationError) {
         next(
@@ -41,7 +41,7 @@ module.exports.deleteCardById = (req, res, next) => {
             "У вас нет прав на удаление данной карточки"
           );
         } else {
-          return Card.findByIdAndRemove(req.params.cardId);
+          Card.deleteOne(card);
         }
       }
     })
