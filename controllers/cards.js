@@ -3,6 +3,7 @@ const Card = require("../models/card");
 const NotFoundError = require("../errors/notFoundError");
 const ForbiddenError = require("../errors/forbiddenError");
 const ValidationError = require("../errors/ValidationError");
+const { STATUS_OK } = require("../consts");
 
 module.exports.getCards = (req, res, next) => {
   Card.find({})
